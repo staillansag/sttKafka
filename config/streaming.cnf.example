@@ -4,25 +4,21 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <array name="StreamingConfiguration" type="record" depth="1">
       <record javaclass="com.wm.data.ISMemDataImpl">
-        <value name="name">sttKafka_services_consumer</value>
-        <value name="description">sttKafka.services.consumer</value>
+        <value name="name">sttKafka_kafka_connection</value>
+        <value name="description">kafka_connection</value>
         <value name="package">sttKafka</value>
         <value name="type">Kafka</value>
-        <value name="host">your-confluent-cloud-bootstrap-uri</value>
-        <value name="clientId">IS6794916e8e</value>
-        <value name="publishMode">Synchronous</value>
-        <value name="other_properties">security.protocol=SASL_SSL
-client.dns.lookup=use_all_dns_ips
-sasl.mechanism=PLAIN
-and=admin
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='your-api-key' password='your-api-secret';
-acks=all
-bootstrap.servers=your-confluent-cloud-bootstrap-uri
-session.timeout.ms=45000
-consumer=</value>
+        <value name="host">your-kafka-bootstrap-uri</value>
+        <value name="clientId">IS289cc5ceca</value>
+        <value name="other_properties">sasl.mechanism=SCRAM-SHA-512
+sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username='your-username' password='your-password' ;</value>
+        <value name="other_runtime_properties">streaming.consumer.validate.consumers.not.greater.than.partitions=true
+sasl.mechanism=SCRAM-SHA-512
+sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username='your-username' password='your-password' ;
+streaming.client.publish.mode=asynchronous</value>
         <value name="enabled">true</value>
-        <value name="useSSL">No</value>
-        <value name="truststoreAlias">DEFAULT_JVM_TRUSTSTORE</value>
+        <value name="securityProtocol">SASL_SSL</value>
+        <value name="truststoreAlias">your-truststore-alias</value>
         <value name="keystoreAlias"></value>
         <null name="keystoreKeyAlias"/>
         <array name="subjects" type="record" depth="1">
@@ -65,7 +61,7 @@ consumer=</value>
               <value name="charsetName">UTF-8</value>
               <null name="schema"/>
             </record>
-            <value name="aliasName">sttKafka_services_consumer</value>
+            <value name="aliasName">sttKafka_kafka_connection</value>
           </record>
         </array>
       </record>
