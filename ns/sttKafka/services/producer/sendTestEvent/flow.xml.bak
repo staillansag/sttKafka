@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
 
   <!-- nodes -->
 
@@ -114,7 +115,7 @@
 </DATA>
 </MAPSET>
 
-<MAPINVOKE SERVICE="pub.date:getCurrentDate" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+<MAPINVOKE SERVICE="pub.date:getCurrentDateString" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
 
   <!-- nodes -->
 
@@ -122,11 +123,6 @@
 </MAP>
 
 <MAP MODE="INVOKEOUTPUT">
-
-  <!-- nodes -->
-
-<MAPCOPY FROM="/date;3.9;0" TO="/event;4;0;sttKafka.docTypes:TestEvent/date;3.9;0">
-</MAPCOPY>
 </MAP>
 </MAPINVOKE>
 </MAP>

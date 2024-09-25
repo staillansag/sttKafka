@@ -3,7 +3,7 @@
 <Values version="2.0">
   <value name="node_type">webMethods/trigger</value>
   <value name="node_subtype">unknown</value>
-  <value name="node_nsName">sttKafka.services.consumer:consumeEvent</value>
+  <value name="node_nsName">sttKafka.services.consumer:consumeTestEvent</value>
   <value name="node_pkg">sttKafka</value>
   <value name="node_comment"></value>
   <value name="is_public">false</value>
@@ -22,7 +22,7 @@
       <value name="stopExecution">false</value>
       <value name="onError">true</value>
     </record>
-    <value name="uniqueId">oVI7C8Rb8Z0WWcATfKDMychO8WQ=</value>
+    <value name="uniqueId">PhwyNQGm1hNr8dcGzFGTQXjH0SI=</value>
     <value name="executeUser">Administrator</value>
     <value name="maxConsumers">1</value>
     <value name="minConsumers">1</value>
@@ -65,13 +65,13 @@
     <record name="target" javaclass="com.wm.util.Values">
       <value name="type">INVOKE_SERVICE</value>
       <record name="parameters" javaclass="com.wm.util.Values">
-        <value name="serviceName">sttKafka.services.consumer.consumeEvent_:stream_target</value>
         <array name="nameValue" type="record" depth="1">
           <record javaclass="com.wm.util.Values">
             <value name="name">serviceName</value>
-            <value name="value">sttKafka.services.consumer.consumeEvent_:stream_target</value>
+            <value name="value">sttKafka.services.consumer.consumeTestEvent_:stream_target</value>
           </record>
         </array>
+        <value name="serviceName">sttKafka.services.consumer.consumeTestEvent_:stream_target</value>
       </record>
     </record>
   </record>
